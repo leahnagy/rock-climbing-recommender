@@ -1,5 +1,4 @@
 # rock-climbing-recommender
-A rock climbing route recommendation system
 
 ### Abstract
 The goal of this project was to provide recommendations on similar rock climbing routes based on a route the user inputs. I worked with the data on Mountain Project's website to obtain each route's statistics, location, and text descriptions. Through feature engineering and pairwise distance measurements, I was able to determine the most similar routes to a specified route based on each route's features. 
