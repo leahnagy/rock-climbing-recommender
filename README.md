@@ -1,4 +1,11 @@
-# rock-climbing-recommender
+# Natural Language Processing (NLP) Project 
+## Rock Climbing Route Recommendation System
+Created By: Leah Nagy
+
+### Table of Contents
+1. [Presentation Slides](https://github.com/leahnagy/rock-climbing-recommender/blob/main/slides.pdf) 
+2. [Webscraping Code](https://github.com/leahnagy/rock-climbing-recommender/blob/main/code_webscrape_routes.ipynb)
+3. [Project Code](https://github.com/leahnagy/rock-climbing-recommender/blob/main/code_recommendations.ipynb)
 
 ### Abstract
 The goal of this project was to provide recommendations on similar rock climbing routes based on a route the user inputs. I worked with the data on Mountain Project's website to obtain each route's statistics, location, and text descriptions. Through feature engineering and pairwise distance measurements, I was able to determine the most similar routes to a specified route based on each route's features. 
