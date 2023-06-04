@@ -1,54 +1,47 @@
 # Natural Language Processing (NLP) Project 
-## Rock Climbing Route Recommendation System
+## Rock Climbing Route Recommender
 Created By: Leah Nagy
 
-### Table of Contents
+### Contents
 1. [Presentation Slides](https://github.com/leahnagy/rock-climbing-recommender/blob/main/slides.pdf) 
-2. [Webscraping Code](https://github.com/leahnagy/rock-climbing-recommender/blob/main/code_webscrape_routes.ipynb)
-3. [Project Code](https://github.com/leahnagy/rock-climbing-recommender/blob/main/code_recommendations.ipynb)
+2. [Webscraping Scripts](https://github.com/leahnagy/rock-climbing-recommender/blob/main/code_webscrape_routes.ipynb)
+3. [Project Scripts](https://github.com/leahnagy/rock-climbing-recommender/blob/main/code_recommendations.ipynb)
 
-### Abstract
-The goal of this project was to provide recommendations on similar rock climbing routes based on a route the user inputs. I worked with the data on Mountain Project's website to obtain each route's statistics, location, and text descriptions. Through feature engineering and pairwise distance measurements, I was able to determine the most similar routes to a specified route based on each route's features. 
+### Project Description
+This project set out to develop a system that could suggest similar rock climbing routes based on a user-specified input. The data was gathered from Mountain Project's website, which encompasses statistics, location, and textual descriptions of each route. By applying feature engineering and pairwise distance metrics, the system was designed to return the most analogous routes, given a particular input route. 
 
-### Design
-Mountain Project is the most popular application for rock climbers to find information about routes across the world. While this app contains pertinent information and is incredibly useful, it lacks a recommendation system to provide users with routes they may be interested in. This increased functionality will increase users' satisfaction with the application and could increase sales for the paid version of the app. 
+### Project Design
+Mountain Project is a popular platform where rock climbers find information about different routes globally. However, it lacks a recommendation system that could potentially enhance user experience and drive sales of the app's premium version. This project aims to bridge this gap by introducing a recommendation system tailored to individual users' preferences.
 
-### Data
-The dataset contains 2,044 individual routes in the Red River Gorge area in Kentucky, along with 12 features, and 155,023 words from the routes' descriptions. Some of the features include the route's difficulty rating, length, and average user-rating. 
+### Dataset
+The dataset comprises 2,044 unique climbing routes located in the Red River Gorge area in Kentucky. Each route is characterized by 12 features and described with a corpus of 155,023 words. Features include the difficulty level of the route, its length, and the average user rating.
 
-### Algorithms
+### Methodology
+
 *Feature Engineering*
 1. Data Cleaning
-2. Converting categorical features to binary dummy variables
-3. Principal Component Analysis to decrease data to 7 features
+2. Transformation of categorical features into binary dummy variables
+3. Reduction of data dimensions to 7 features via Principal Component Analysis
 
 *Text Pre-processing*
-1. Remove punctuation & numbers
-2. Remove stopwords
-3. Convert text to lowercase
-4. Lemmatize words to their roots
-5. Principal Component Analysis
+1. Removal of punctuation & numeric characters
+2. Elimination of stopwords
+3. Conversion of text to lowercase
+4. Lemmatization to simplify words to their root form
+5. Dimension reduction via Principal Component Analysis
 
 *Content-Based Recommendation Systems*
-1. Baseline Model - Most popular routes based on weighted average user-ratings and number of ratings
-2. Route Statistics Similarity Model - using pairwise distances, return n most similar routes to X, where n is the number of routes to be returned and X is the route the user inputs. The features include the numerical and categorical route data.
-3. Text Based Similarity Model - using pairwise distances, return n most similar routes to X, where n is the number of routes to be returned and X is the route the user inputs. The features include the TFIDF vectors from the routes' text description.
+1. Baseline Model - Offers popular routes based on weighted average user-ratings and the number of ratings
+2. Route Statistics Similarity Model - Utilizes pairwise distances to suggest the n most similar routes to X (where n is the number of desired route recommendations, and X is the user's input route). Features comprise numerical and categorical route data.
+3. Text Based Similarity Model - Works similarly to the previous model but uses TFIDF vectors derived from route descriptions.
 
-**Final Recommendation System**
-The model that returned routes that were most similar was the second model where the recommendations were based on the numerical and categorical information about the route. After reviewing the recommended routes and comparing them to the input, it was obvious that many of the features were very similar. For example: 
-| Route Name                  | Difficulty | Style  | Length | Pitches | Avg. Rating |
-|              :-----:        |   :----:   |  :---: |  :---: | :----:  |  :-----:    |
-| Roadside Attraction (input) | 5.7        | Trad   | 20.0   | 2       | 3.7         |
-| Bedtime for Bonzo           | 5.6        | Trad   | 20.0   | 2       | 3.4         |
+The model offering the most coherent recommendations was the Route Statistics Similarity Model, which bases its suggestions on the numerical and categorical information about the route. A cursory comparison of the recommended routes with the input route indicated considerable feature similarity.
 
-### Tools 
-* Numpy and Pandas for data manipulation
-* Spacy and Scikit-learn for text processing and modeling
-* Matplotlib and Seaborn for plotting
+### Tools Utilized
+* Data manipulation: Numpy and Pandas
+* Text processing and modeling: Spacy and Scikit-learn
+* Plotting: Matplotlib and Seaborn
 
-### Future Work
-* Combining collaborative-based filtering with the content-based filtering for could provide a high-performing hybrid model that will produce better insights. To create that, I will be web scraping the reviews along with the users' other reviews as features for the hybrid approach. 
-* Deploying an interactive application that allows for the user to input their favorite route(s) and return n recommended routes. 
-
-### Communication
-All of the slides, visuals, and coding notebooks can be found here on my Github profile. 
+### Future Enhancements
+* The inclusion of collaborative-based filtering with the current content-based filtering could create a hybrid model that yields improved recommendations. This would necessitate web scraping user reviews and employing them as features for the hybrid model.
+* Deployment of an interactive application that allows users to input their favorite routes and receive n recommended routes.
